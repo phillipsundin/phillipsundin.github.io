@@ -1,5 +1,4 @@
 ---
-layout: single
 author_profile: true
 title: Phil's Page
 ---
