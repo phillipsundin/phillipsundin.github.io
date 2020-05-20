@@ -1,1 +1,3 @@
-This is the main page!
+I'm Phil Sundin, a 4th year doctoral student at UCLA in the Department of Biostatistics. I was previously a management consultant at Deloitte Consulting for 2 years, and before that, I was an industrial and manufacturing engineering student at Pennsylvania State University. Needless to say, I have a diverse professional background that has only enriched my knowledge of statistics and the role it plays in so many fields in today's increasingly data-driven world.
+
+This website is designed to give a brief overview of my research interests and academic work. Please contact me with any questions and suggestions you may have!
