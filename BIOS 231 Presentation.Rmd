@@ -1,0 +1,142 @@
+---
+title: "BIOS 231 Stepped Wedge Design"
+author: "Sundin"
+date: "May 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing the Stepped Wedge Package
+
+You'll need to first install the package, and load it into your library. I've commented out the installation line in my code (otherwise R yells at me), but for the first time you run the code, you should uncomment it.
+```{r,message= FALSE,warning=FALSE}
+#install.packages("swCRTdesign")
+library(swCRTdesign)
+library(ggplot2)
+library(dplyr)
+```
+
+## Creating the Stepped Wedge Object
+Let's keep it simple at first and get a visual representation of what the stepped wedge design (SWD) looks like, at a cluster level. We can see time on the horizontal-axis, and each cluster along the vertical axis.
+
+1 indicates cluster i receives treatment at time j, and 0 indicates control.
+```{r, eval=TRUE}
+swDsn.Ex1 <- swDsn( clusters=c(2,3,3) )
+print(swDsn.Ex1$swDsn)
+```
+So you'll see how this command works - in the clusters argument, you enter how many clusters switch in each time period. So in our first example, we have a total of 8 clusters. 2 clusters switch in the first period, then 3 clusters in the second period, then 3 more clusters in the final period. The default SWD includes a first period where all clusters are in control.
+
+You can see that the swDsn object has a lot of other parts to it as well. For now, we'll just be interested in viewing the pictoral respresentation of the SWD, so we'll use "$swDsn" to do so.
+
+So what if we don't want to include that first time period with all control? Thankfully, there's a command for that!
+
+```{r, eval=TRUE}
+swDsn.Ex2 <- swDsn( clusters=c(2,3,3),all.ctl.time0=FALSE )
+print(swDsn.Ex2$swDsn)
+```
+
+And what if we only have two time periods?
+```{r, eval=TRUE}
+swDsn.Ex3 <- swDsn( clusters=c(4,4),all.ctl.time0=FALSE )
+print(swDsn.Ex3$swDsn)
+```
+
+But normally, stepped wedge designs are longitudinal in nature. In fact, often we want to monitor studies well after the treatment has been implemented. In that case, we can add extra time to our study.
+```{r, eval=TRUE}
+swDsn.Ex4 <- swDsn( clusters=c(2,2,2,2),extra.time = 3 )
+print(swDsn.Ex4$swDsn)
+```
+
+Finally, suppose there is some sort of "treatment gap" in the first time perioud. We can then think of the treatment as only being fractionally implemented. If that's the case, then we can represent that as well.
+
+```{r, eval=TRUE}
+swDsn.Ex5 <- swDsn( clusters=c(2,2,2,2),tx.effect =0.5  )
+print(swDsn.Ex5$swDsn)
+```
+
+We also have the treatment "ramp up" over time as well
+
+```{r, eval=TRUE}
+swDsn.Ex5 <- swDsn( clusters=c(2,2,2,2,2,2),tx.effect =c(0.5,0.65,0.8,0.95,1)  )
+print(swDsn.Ex5$swDsn)
+```
+
+
+<br>
+<br>
+<br>
+
+## Power Calculations
+How do we calculate power for such complicated designs? Based on quite a few different parameters. Thankfully, the package can calculate power for simple SWD designs. Will need to make quite a few assumptions! Will need the following input
+
+* Design List i.e. the stepped wedge design object created from swDsn
+* Distribution (currently accepts normally distributed and binary outcome). Package uses "Gaussian" to denote normal distribution
+* n integer (scalar): Number of observations for each cluster at each time point
+* $\mu_0$ numeric (scalar): Mean (outcome) in the control group.
+* $\mu_1$ numeric (scalar): Mean (outcome) in the treatment group. 
+* $\tau$ numeric (scalar): Standard deviation of random cluster-level intercepts.
+* $\eta$ numeric (scalar): Standard deviation of random treatment effects. Note that in the original Hussey and Hughes model, this term is set to 0.
+* $\gamma$ numeric (scalar): Standard deviation of random time effects. Default is set to 0.
+* $\rho$ numeric (scalar): Correlation between random intercepts and random treatment effects. Default value is 0.
+* $\sigma$ numeric (scalar): Standard deviation when assuming Gaussian (i.e. normal) distribution (marked as distn=gaussian in the code).
+  + For binomial distribution, $\sigma^2$ is automatically set to $\mu (1 − µ)$ where $\mu$ = $\frac{(µ_1 +µ_0)}{2}$
+* $\alpha$ numeric (scalar): Two-sided statistical significance level.
+* retDATA logical: if TRUE, all stored (input, intermediate, and output) values of swPwr are returned. Default value is FALSE.
+
+
+<br>
+<br>
+<br>
+
+So, we can see that there are lots of different parameters that can affect power of the stepped wedge design. Let's take a look at an example:
+
+
+##### Stepped Wedge Power Calculation for Continuous Outcome
+```{r, eval=TRUE}
+swPwr.Ex1 <- swPwr(swDsn(c(6,6,6,6)), distn="gaussian",
+n=50, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex1)
+```
+
+Notice that we just went ahead and called the swDsn function right inside the power function for the sake of brevity. What happens if we add another 5 patients to each time point?
+
+```{r, eval=TRUE}
+swPwr.Ex2 <- swPwr(swDsn(c(6,6,6,6)), distn="gaussian",
+n=55, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex2)
+```
+A slight power increase, but maybe not what we were looking for. How does increasing the number of clusters affect power? Let's compare to the original
+```{r, eval=TRUE}
+swPwr.Ex3 <- swPwr(swDsn(c(7,7,7,7)), distn="gaussian",
+n=50, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex3)
+```
+Again, a slight power increase. Let's take our original 24 clusters and spread them out more over time and see how that might affect power.
+```{r, eval=TRUE}
+swPwr.Ex4 <- swPwr(swDsn(c(4,4,4,4,4,4)), distn="gaussian",
+n=50, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex4)
+```
+Wow! A pretty sizable jump in power for spreading out the same clusters over time? Why might this be? What are the advantages and disadvantages of doing this?
+
+Let's take the extreme case: 24 clusters each switched from control to treatmentx at their own time.
+```{r, eval=TRUE}
+swPwr.Ex5 <- swPwr(swDsn(c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)), distn="gaussian",
+n=50, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex5)
+```
+So just by spreading out the clusters more over time, we can get big increases in power. What about the other direction?
+```{r, eval=TRUE}
+swPwr.Ex6 <- swPwr(swDsn(c(12,12)), distn="gaussian",
+n=50, mu0=10, mu1=10.5, tau=0.01, eta=0, rho=0,gamma=0,sigma = 5.5, alpha=0.05, retDATA=FALSE)
+print(swPwr.Ex6)
+```
+
+So increasing the time over which clusters are switched over increases power, but comes at a cost of logistical and financial constraints. 
+
+Questions - how might observing extra time affect power? How much does the initial period affect power (the period in which all clusters are assigned to control)?
+
+
