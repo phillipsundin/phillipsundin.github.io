@@ -6,3 +6,29 @@ description: "Phil Sundin's Personal Page."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://phillipsundin.github.io/"
 repository: "https://phillipsundin.github.io/"
+
+
+include:
+  - .htaccess
+  - _pages
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+author:
+  name : "Phillip Sundin"
+  bio: "Ph.D. candidate<br/>
+  UCLA, Department of Biostatistics"
+  location: "Los Angeles, CA"
+  links:
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url:  mailto:phillip1492@gmail.com
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: https://github.com/williazo
+    - label: LinkedIn
+      icon: "fab fa-linkedin"
+      url: https://www.linkedin.com/in/williazo/
