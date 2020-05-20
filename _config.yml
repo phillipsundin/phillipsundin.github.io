@@ -26,9 +26,6 @@ author:
     - label: "Email"
       icon: "fas fa-envelope"
       url:  mailto:phillip1492@gmail.com
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: https://github.com/williazo
     - label: LinkedIn
       icon: "fab fa-linkedin"
-      url: https://www.linkedin.com/in/williazo/
+      url: https://www.linkedin.com/in/sundinphillip/
