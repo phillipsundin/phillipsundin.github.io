@@ -1,1 +1,8 @@
 theme: jekyll-theme-minimal
+
+title: Phil Sundin
+email: phillip1492@ucla.edu
+description: "Phil Sundin's Personal Page."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://phillipsundin.github.io/"
+repository: "https://phillipsundin.github.io/"
