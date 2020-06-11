@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Phil Sundin
 email: phillip1492@ucla.edu
-description: "sdf"
+description: "My personal page"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://phillipsundin.github.io/"
 repository: "phillipsundin/phillipsundin.github.io"
