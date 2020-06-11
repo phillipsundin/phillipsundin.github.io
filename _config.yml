@@ -30,7 +30,7 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 author:
-  name : "PS"
+  name : "Phillip Sundin"
   #avatar: "/assets/images/personal_photo.jpg"
   bio: "Ph.D. candidate<br/>
   UCLA, Department of Biostatistics"
@@ -41,10 +41,10 @@ author:
       url:  mailto:phillip1492@ucla.edu
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: sf
+      url: https://github.com/phillipsundin
     - label: LinkedIn
       icon: "fab fa-linkedin"
-      url: dfg
+      url: https://www.linkedin.com/in/sundinphillip/
 
 
 
