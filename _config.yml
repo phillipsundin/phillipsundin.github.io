@@ -1,12 +1,24 @@
-theme: jekyll-theme-minimal
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 title: Phil Sundin
 email: phillip1492@ucla.edu
-description: "Phil Sundin's Personal Page."
+description: "sdf"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://phillipsundin.github.io/"
-repository: "https://phillipsundin.github.io/"
-
+url: "https://phillipsundin.github.io/
+repository: "phillipsundin/phillipsundin.github.io"
 
 include:
   - .htaccess
@@ -18,14 +30,82 @@ encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 author:
-  name : "Phillip Sundin"
+  name : "PS"
+  #avatar: "/assets/images/personal_photo.jpg"
   bio: "Ph.D. candidate<br/>
   UCLA, Department of Biostatistics"
   location: "Los Angeles, CA"
   links:
     - label: "Email"
       icon: "fas fa-envelope"
-      url:  mailto:phillip1492@gmail.com
+      url:  mailto:phillip1492@ucla.edu
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: sf
     - label: LinkedIn
       icon: "fab fa-linkedin"
-      url: https://www.linkedin.com/in/sundinphillip/
+      url: dfg
+
+
+
+# Build settings
+markdown: kramdown
+remote_theme: "mmistakes/minimal-mistakes@4.16.5"
+minimal_mistakes_skin: "mint"
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+loacale: "en-US"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+      comments: false
+      related: false
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Outputting
+# permalink: /:categories/:title/
+# paginate: 5 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-147241561-1"
+    anonymize_ip: false # default
+
+google_site_verification: "cn5_KfK5EqRAmDQb1_TTvlg-J3Q42CMZtMfHjs2z8XQ"
+
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
