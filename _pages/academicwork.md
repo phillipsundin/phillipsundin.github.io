@@ -1,6 +1,6 @@
 ---
 title: "Academic Work"
-permalink: /AcademicWork/
+permalink: /academicwork/
 ---
 
 Houses my academic work
