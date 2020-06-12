@@ -89,13 +89,13 @@ defaults:
 # paginate_path: /page:num/
 timezone: America/Los_Angeles # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "UA-147241561-1"
-    anonymize_ip: false # default
+#analytics:
+ # provider: "google-gtag"
+  #google:
+   # tracking_id: "UA-147241561-1"
+   # anonymize_ip: false # default
 
-google_site_verification: "cn5_KfK5EqRAmDQb1_TTvlg-J3Q42CMZtMfHjs2z8XQ"
+# google_site_verification: "cn5_KfK5EqRAmDQb1_TTvlg-J3Q42CMZtMfHjs2z8XQ"
 
 
 # Exclude from processing.
