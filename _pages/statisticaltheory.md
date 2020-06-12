@@ -20,5 +20,8 @@ Does this link work? [Resume](https://phillipsundin.github.io/Resume_Sundin_Phil
 <embed src="https://phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" type="application/pdf" />
 <iframe src="https://phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" width = "100%" height="800em"></iframe>
 
-<embed src="phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" type="application/pdf" />
-<iframe src="phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" width = "100%" height="800em"></iframe>
+<embed src="https://phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" type="application/pdf" />
+<iframe src="https://phillipsundin.github.io/_pdf_files/Resume_Sundin_Phillip.pdf" width = "100%" height="800em"></iframe>
+
+<embed src="https://phillipsundin.github.io/_pdf_files/resume.pdf" type="application/pdf" />
+<iframe src="https://phillipsundin.github.io/_pdf_files/resume.pdf" width = "100%" height="800em"></iframe>
