@@ -10,3 +10,4 @@ Here's a file some some proofs and theoretical problems I find interesting.
 <embed src="https://phillipsundin.github.io/pdffiles/AltamedBetaRegression.pdf" type="application/pdf" />
 <embed src="https://phillipsundin.github.io/pdf_files/AltamedBetaRegression.pdf" type="application/pdf" />
 <embed src="https://phillipsundin.github.io/_pdffiles/AltamedBetaRegression.pdf" type="application/pdf" />
+
