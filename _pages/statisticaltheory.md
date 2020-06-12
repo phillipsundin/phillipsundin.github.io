@@ -25,3 +25,10 @@ Does this link work? [Resume](https://phillipsundin.github.io/Resume_Sundin_Phil
 
 <embed src="https://phillipsundin.github.io/_pdf_files/resume.pdf" type="application/pdf" />
 <iframe src="https://phillipsundin.github.io/_pdf_files/resume.pdf" width = "100%" height="800em"></iframe>
+<embed src="https://phillipsundin.github.io/pdf_files/resume.pdf" type="application/pdf" />
+<iframe src="https://phillipsundin.github.io/pdf_files/resume.pdf" width = "100%" height="800em"></iframe>
+<embed src="https://phillipsundin.github.io/_pdffiles/resume.pdf" type="application/pdf" />
+<iframe src="https://phillipsundin.github.io/_pdf_iles/resume.pdf" width = "100%" height="800em"></iframe>
+<embed src="https://phillipsundin.github.io/pdffiles/resume.pdf" type="application/pdf" />
+<iframe src="https://phillipsundin.github.io/pdffiles/resume.pdf" width = "100%" height="800em"></iframe>
+
