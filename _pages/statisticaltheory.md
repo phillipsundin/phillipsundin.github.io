@@ -1,4 +1,3 @@
-
 ---	
 title: "Statistical Theory"	
 permalink: /statisticaltheory/	
