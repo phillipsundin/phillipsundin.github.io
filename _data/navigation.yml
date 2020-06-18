@@ -7,3 +7,5 @@ main:
     url: /statisticaltheory
   - title: "Resume"
     url: /resume
+  - title: "Code"
+    url: /code
