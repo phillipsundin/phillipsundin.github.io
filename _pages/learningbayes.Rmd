@@ -1,6 +1,7 @@
 ---
 title: "LearningBayes"
 author: "Sundin"
+permalink: /learningbayes/
 output: html_document
 ---
 
