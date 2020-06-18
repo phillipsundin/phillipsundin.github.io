@@ -15,6 +15,7 @@ permalink: /code/
 print("Hello")
 x <-4 
 print(9*x)
+plot(7)
 ```
 
 '''{r}
