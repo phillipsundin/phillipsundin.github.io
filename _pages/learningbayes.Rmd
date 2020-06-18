@@ -1,7 +1,6 @@
 ---
 title: "LearningBayes"
 author: "Sundin"
-#date: "6/18/2020"
 output: html_document
 ---
 
