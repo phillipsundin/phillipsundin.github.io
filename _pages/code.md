@@ -11,7 +11,7 @@ permalink: /code/
 ---
 
 
-```{r }
+```{r}
 print("Hello")
 x <-4 
 print(9*x)
