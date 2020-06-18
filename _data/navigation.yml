@@ -9,3 +9,5 @@ main:
     url: /resume
   - title: "Code"
     url: /code
+  - title: "TestMarkdown"
+    url: /LearningBayes
