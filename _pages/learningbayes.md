@@ -2,7 +2,8 @@
 title: "LearningBayes"
 author: "Sundin"
 permalink: /learningbayes/
-output: rmarkdown::github_document
+output:  html_document:
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
