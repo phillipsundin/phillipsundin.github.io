@@ -13,4 +13,11 @@ permalink: /code/
 
 ```{r}
 print("Hello")
+x <-4 
+print(9*x)
 ```
+
+'''{r}
+x <-2 
+print(2*x)
+'''
