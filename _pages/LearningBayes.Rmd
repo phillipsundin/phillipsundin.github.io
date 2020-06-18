@@ -1,6 +1,7 @@
 ---
 title: "LearningBayes"
 author: "Sundin"
+permalink: /LearningBayes/
 output: html_document
 ---
 
@@ -28,18 +29,3 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-data ( chapt e r9 ) ; y<−yX. o2uptake [ , 1 ] ; X<−yX. o2uptake [ , −1]
-g<−l eng th ( y ) ; nu0<−1 ; s20 <−8.54
-S<−1000
-## data : y , X
-## p r i o r parameter s : g , nu0 , s20
-## number o f independent samples to g ene r a t e : S
-n<−dim(X) [ 1 ] ; p<−dim(X) [ 2 ]
-Hg<− ( g /( g+1))  X%%s o l v e ( t (X)%%X)%%t (X)
-SSRg<− t ( y)%%( diag ( 1 , nrow=n) − Hg ) %%y
-s2<−1/rgamma(S , ( nu0+n )/2 , ( nu0 s20+SSRg)/2 )
-Vb<− g s o l v e ( t (X)%%X) / ( g+1)
-Eb<− Vb%%t (X)%%y
-E<−matrix ( rnorm(Sp , 0 , s q r t ( s2 ) ) , S , p)
-beta<−t ( t (E%%chol (Vb) ) +c (Eb) )
