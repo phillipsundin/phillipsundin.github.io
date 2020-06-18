@@ -11,14 +11,14 @@ permalink: /code/
 ---
 
 
-```{r}
+```{r }
 print("Hello")
 x <-4 
 print(9*x)
 plot(7)
 ```
 
-'''{r}
+```{r}
 x <-2 
 print(2*x)
-'''
+```
